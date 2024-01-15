@@ -1,0 +1,1006 @@
+﻿Seif Elredeini
+220504545
+
+
+Chapter 3:
+
+
+
+Seif Elredeini@Seif MINGW64 ~ (master)
+$ git --version
+git version 2.39.1.windows.1
+
+
+Seif Elredeini@Seif MINGW64 ~ (master)
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+core.fsmonitor=true
+pull.rebase=false
+credential.helper=manager
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+core.editor="C:\Users\Seif Elredeini\AppData\Local\Programs\Microsoft VS Code\bin\code" --wait
+user.email=ojack7666@gmail.com
+user.name=Seif Elredeini
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+
+
+Seif Elredeini@Seif MINGW64 ~ (master)
+$ git config --list --show-origin
+file:C:/Program Files/Git/etc/gitconfig diff.astextplain.textconv=astextplain
+file:C:/Program Files/Git/etc/gitconfig filter.lfs.clean=git-lfs clean -- %f
+file:C:/Program Files/Git/etc/gitconfig filter.lfs.smudge=git-lfs smudge -- %f
+file:C:/Program Files/Git/etc/gitconfig filter.lfs.process=git-lfs filter-process
+file:C:/Program Files/Git/etc/gitconfig filter.lfs.required=true
+file:C:/Program Files/Git/etc/gitconfig http.sslbackend=openssl
+file:C:/Program Files/Git/etc/gitconfig http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+file:C:/Program Files/Git/etc/gitconfig core.autocrlf=true
+file:C:/Program Files/Git/etc/gitconfig core.fscache=true
+file:C:/Program Files/Git/etc/gitconfig core.symlinks=false
+file:C:/Program Files/Git/etc/gitconfig core.fsmonitor=true
+file:C:/Program Files/Git/etc/gitconfig pull.rebase=false
+file:C:/Program Files/Git/etc/gitconfig credential.helper=manager
+file:C:/Program Files/Git/etc/gitconfig credential.https://dev.azure.com.usehttppath=true
+file:C:/Program Files/Git/etc/gitconfig init.defaultbranch=master
+file:C:/Users/Seif Elredeini/.gitconfig core.editor="C:\Users\Seif Elredeini\AppData\Local\Programs\Microsoft VS Code\bin\code" --wait
+file:C:/Users/Seif Elredeini/.gitconfig user.email=ojack7666@gmail.com
+file:C:/Users/Seif Elredeini/.gitconfig user.name=Seif Elredeini
+file:.git/config        core.repositoryformatversion=0
+file:.git/config        core.filemode=false
+file:.git/config        core.bare=false
+file:.git/config        core.logallrefupdates=true
+file:.git/config        core.symlinks=false
+file:.git/config        core.ignorecase=true
+
+
+Seif Elredeini@Seif MINGW64 ~ (master)
+$ mkdir getting-started-with-git
+
+
+Seif Elredeini@Seif MINGW64 ~ (master)
+$ cd getting-started-with-git/
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git (master)
+$ git init
+Initialized empty Git repository in C:/Users/Seif Elredeini/getting-started-with-git/.git/
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git (master)
+$ cd .git/
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/.git (GIT_DIR!)
+$ ls
+HEAD  config  description  hooks/  info/  objects/  refs/
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/.git (GIT_DIR!)
+$ cd ..
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git (master)
+$ echo "Hello, Git!" > hello.txt
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git (master)
+$ git add hello.txt
+warning: in the working copy of 'hello.txt', LF will be replaced by CRLF the next time Git touches it
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git (master)
+$ git commit -m "Initial Commit: saying hello"
+[master (root-commit) a0323af] Initial Commit: saying hello
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.txt
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git (master)
+$ git log
+commit a0323af61d3989d497124465a75dd8e77f5ba3bf (HEAD -> master)
+Author: Seif Elredeini <ojack7666@gmail.com>
+Date:   Tue Oct 24 13:33:53 2023 +0300
+
+
+    Initial Commit: saying hello
+
+
+Chapter 4:
+
+
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git (master)
+$ mkdir calculator
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git (master)
+$ cd calculator/
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git init
+Initialized empty Git repository in C:/Users/Seif Elredeini/getting-started-with-git/calculator/.git/
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ ls -al
+total 4
+drwxr-xr-x 1 Seif Elredeini 197609 0 Oct 24 13:36 ./
+drwxr-xr-x 1 Seif Elredeini 197609 0 Oct 24 13:36 ../
+drwxr-xr-x 1 Seif Elredeini 197609 0 Oct 24 13:36 .git/
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ touch README.md
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ ls
+README.md
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ ls -al
+total 4
+drwxr-xr-x 1 Seif Elredeini 197609 0 Oct 24 13:38 ./
+drwxr-xr-x 1 Seif Elredeini 197609 0 Oct 24 13:36 ../
+drwxr-xr-x 1 Seif Elredeini 197609 0 Oct 24 13:36 .git/
+-rw-r--r-- 1 Seif Elredeini 197609 0 Oct 24 13:38 README.md
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git add README.md
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git commit -m "Intial Commit"
+[master (root-commit) d703dae] Intial Commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 README.md
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git log
+commit d703daeee16d41701599fbf872f34fcbee01b831 (HEAD -> master)
+Author: Seif Elredeini <ojack7666@gmail.com>
+Date:   Tue Oct 24 13:39:26 2023 +0300
+
+
+    Intial Commit
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ echo "# Calculator Project" >> README.md
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ echo "public class Calculator {}" >> Calculator.java
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Calculator.java
+
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Calculator.java
+
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git add README.md
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Calculator.java
+
+
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ echo "This project will hold a simple implementation of Calculator in Java" >> README.md
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Calculator.java
+
+
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git commit -m "Added project title to the README"
+[master 28afaf2] Added project title to the README
+ 1 file changed, 1 insertion(+)
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Calculator.java
+
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ ls
+Calculator.java  README.md
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ nano Calculator.java
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git Calculator.java
+git: 'Calculator.java' is not a git command. See 'git --help'.
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Calculator.java
+
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ touch CHANGELOG.md
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git add README.md
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git add CHANGELOG.md
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ ls
+CHANGELOG.md  Calculator.java  README.md
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   CHANGELOG.md
+        modified:   README.md
+
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Calculator.java
+
+
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git add README.md CHANGELOG.md
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   CHANGELOG.md
+        modified:   README.md
+
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Calculator.java
+
+
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git add *.md
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ ls
+CHANGELOG.md  Calculator.java  README.md
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git statsu
+git: 'statsu' is not a git command. See 'git --help'.
+
+
+The most similar command is
+        status
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   CHANGELOG.md
+        modified:   README.md
+
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Calculator.java
+
+
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git add *.md *.java
+warning: in the working copy of 'Calculator.java', LF will be replaced by CRLF the next time Git touches it
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   CHANGELOG.md
+        new file:   Calculator.java
+        modified:   README.md
+
+
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git add *
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git commit -m "Extra information about the project, a changelog file and our future Calculator class file"
+[master 0c58edb] Extra information about the project, a changelog file and our future Calculator class file
+ 3 files changed, 4 insertions(+)
+ create mode 100644 CHANGELOG.md
+ create mode 100644 Calculator.java
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git statsu
+git: 'statsu' is not a git command. See 'git --help'.
+
+
+The most similar command is
+        status
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ echo "Intial version of the Calculator project" >> CHANGELOG.md
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git add .
+warning: in the working copy of 'CHANGELOG.md', LF will be replaced by CRLF the next time Git touches it
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git commit
+Aborting commit due to empty commit message.
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git commit -m ""
+Aborting commit due to empty commit message.
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git commit --alow-empty-message --no-edit
+error: unknown option `alow-empty-message'
+usage: git commit [-a | --interactive | --patch] [-s] [-v] [-u<mode>] [--amend]
+                  [--dry-run] [(-c | -C | --squash) <commit> | --fixup [(amend|reword):]<commit>)]
+                  [-F <file> | -m <msg>] [--reset-author] [--allow-empty]
+                  [--allow-empty-message] [--no-verify] [-e] [--author=<author>]
+                  [--date=<date>] [--cleanup=<mode>] [--[no-]status]
+                  [-i | -o] [--pathspec-from-file=<file> [--pathspec-file-nul]]
+                  [(--trailer <token>[(=|:)<value>])...] [-S[<keyid>]]
+                  [--] [<pathspec>...]
+
+
+    -q, --quiet           suppress summary after successful commit
+    -v, --verbose         show diff in commit message template
+
+
+Commit message options
+    -F, --file <file>     read message from file
+    --author <author>     override author for commit
+    --date <date>         override date for commit
+    -m, --message <message>
+                          commit message
+    -c, --reedit-message <commit>
+                          reuse and edit message from specified commit
+    -C, --reuse-message <commit>
+                          reuse message from specified commit
+    --fixup [(amend|reword):]commit
+                          use autosquash formatted message to fixup or amend/reword specified commit
+    --squash <commit>     use autosquash formatted message to squash specified commit
+    --reset-author        the commit is authored by me now (used with -C/-c/--amend)
+    --trailer <trailer>   add custom trailer(s)
+    -s, --signoff         add a Signed-off-by trailer
+    -t, --template <file>
+                          use specified template file
+    -e, --edit            force edit of commit
+    --cleanup <mode>      how to strip spaces and #comments from message
+    --status              include status in commit message template
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+
+
+Commit contents options
+    -a, --all             commit all changed files
+    -i, --include         add specified files to index for commit
+    --interactive         interactively add files
+    -p, --patch           interactively add changes
+    -o, --only            commit only specified files
+    -n, --no-verify       bypass pre-commit and commit-msg hooks
+    --dry-run             show what would be committed
+    --short               show status concisely
+    --branch              show branch information
+    --ahead-behind        compute full ahead/behind values
+    --porcelain           machine-readable output
+    --long                show status in long format (default)
+    -z, --null            terminate entries with NUL
+    --amend               amend previous commit
+    --no-post-rewrite     bypass post-rewrite hook
+    -u, --untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git commit -m "no message"
+[master 07cf342] no message
+ 1 file changed, 1 insertion(+)
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ ls
+CHANGELOG.md  Calculator.java  README.md
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git commit -am "Beautiful commit with all tracked file modifications"
+On branch master
+nothing to commit, working tree clean
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git add .
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git commit -am "Beautiful commit with all tracked file modifications"
+On branch master
+nothing to commit, working tree clean
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ echo "* [] Finalize Git repository setup" >> TODO.md
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ echo "* [] Provide an addition method in Calculator.java" >> TODO.md
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ echo "TODO.md" >> .gitignore
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ ls
+CHANGELOG.md  Calculator.java  README.md  TODO.md
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ cat Calculator.java
+public class Calculator {
+        public static void main(String[] args) {}
+}
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ code .
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git log
+commit 07cf34213096b7870acd5d0b391e6b0f36710592 (HEAD -> master)
+Author: Seif Elredeini <ojack7666@gmail.com>
+Date:   Tue Oct 24 13:55:12 2023 +0300
+
+
+    no message
+
+
+commit 0c58edb1cb3c30139a85a9a1cb4eb4260ccc5513
+Author: Seif Elredeini <ojack7666@gmail.com>
+Date:   Tue Oct 24 13:51:11 2023 +0300
+
+
+    Extra information about the project, a changelog file and our future Calculator class file
+
+
+commit 28afaf2eebf0f0631ff65911018ef0b3595cb669
+Author: Seif Elredeini <ojack7666@gmail.com>
+Date:   Tue Oct 24 13:44:38 2023 +0300
+
+
+    Added project title to the README
+
+
+commit d703daeee16d41701599fbf872f34fcbee01b831
+Author: Seif Elredeini <ojack7666@gmail.com>
+Date:   Tue Oct 24 13:39:26 2023 +0300
+
+
+    Intial Commit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Chapter 5:
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git branch feature/addition
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git branch
+  feature/addition
+* master
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git checkout feature/addition
+Switched to branch 'feature/addition'
+
+
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (feature/addition)
+$ git branch
+* feature/addition
+  master
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (feature/addition)
+$ git checkout -b feature/soon-to-be-discarded
+Switched to a new branch 'feature/soon-to-be-discarded'
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (feature/soon-to-be-discarded)
+$ git branch
+  feature/addition
+* feature/soon-to-be-discarded
+  master
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (feature/soon-to-be-discarded)
+$ git checkout
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (feature/soon-to-be-discarded)
+$ git branch feature/addition
+fatal: a branch named 'feature/addition' already exists
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (feature/soon-to-be-discarded)
+$ nano Calculator.java
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (feature/soon-to-be-discarded)
+$ git status
+On branch feature/soon-to-be-discarded
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Calculator.java
+
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (feature/soon-to-be-discarded)
+$ git checkout feature/addition
+Switched to branch 'feature/addition'
+M       Calculator.java
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (feature/addition)
+$ ls
+CHANGELOG.md  Calculator.java  README.md  TODO.md
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (feature/addition)
+$ cat Calculator.java
+public class Calculator {
+        public static void main(String[] args) {}
+        public int addition(int a, int b) {
+                return a + b;
+        }
+}
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (feature/addition)
+$ git add .
+warning: in the working copy of 'Calculator.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.gitignore', LF will be replaced by CRLF the next time Git touches it
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (feature/addition)
+$ git commit -m "Adding a method to Calculator.java-class"
+[feature/addition d3acecf] Adding a method to Calculator.java-class
+ 2 files changed, 4 insertions(+)
+ create mode 100644 .gitignore
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (feature/addition)
+$ git status
+On branch feature/addition
+nothing to commit, working tree clean
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (feature/addition)
+$ git log
+commit d3acecf9b4341fa30061226567d74faa058f3e76 (HEAD -> feature/addition)
+Author: Seif Elredeini <ojack7666@gmail.com>
+Date:   Tue Oct 24 14:14:13 2023 +0300
+
+
+    Adding a method to Calculator.java-class
+
+
+commit 07cf34213096b7870acd5d0b391e6b0f36710592 (master, feature/soon-to-be-discarded)
+Author: Seif Elredeini <ojack7666@gmail.com>
+Date:   Tue Oct 24 13:55:12 2023 +0300
+
+
+    no message
+
+
+commit 0c58edb1cb3c30139a85a9a1cb4eb4260ccc5513
+Author: Seif Elredeini <ojack7666@gmail.com>
+Date:   Tue Oct 24 13:51:11 2023 +0300
+
+
+    Extra information about the project, a changelog file and our future Calculator class file
+
+
+commit 28afaf2eebf0f0631ff65911018ef0b3595cb669
+Author: Seif Elredeini <ojack7666@gmail.com>
+Date:   Tue Oct 24 13:44:38 2023 +0300
+
+
+    Added project title to the README
+
+
+commit d703daeee16d41701599fbf872f34fcbee01b831
+Author: Seif Elredeini <ojack7666@gmail.com>
+Date:   Tue Oct 24 13:39:26 2023 +0300
+
+
+    Intial Commit
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (feature/addition)
+$ git log
+commit d3acecf9b4341fa30061226567d74faa058f3e76 (HEAD -> feature/addition)
+Author: Seif Elredeini <ojack7666@gmail.com>
+Date:   Tue Oct 24 14:14:13 2023 +0300
+
+
+    Adding a method to Calculator.java-class
+
+
+commit 07cf34213096b7870acd5d0b391e6b0f36710592 (master, feature/soon-to-be-discarded)
+Author: Seif Elredeini <ojack7666@gmail.com>
+Date:   Tue Oct 24 13:55:12 2023 +0300
+
+
+    no message
+
+
+commit 0c58edb1cb3c30139a85a9a1cb4eb4260ccc5513
+Author: Seif Elredeini <ojack7666@gmail.com>
+Date:   Tue Oct 24 13:51:11 2023 +0300
+
+
+    Extra information about the project, a changelog file and our future Calculator class file
+
+
+commit 28afaf2eebf0f0631ff65911018ef0b3595cb669
+Author: Seif Elredeini <ojack7666@gmail.com>
+Date:   Tue Oct 24 13:44:38 2023 +0300
+
+
+    Added project title to the README
+
+
+commit d703daeee16d41701599fbf872f34fcbee01b831
+Author: Seif Elredeini <ojack7666@gmail.com>
+Date:   Tue Oct 24 13:39:26 2023 +0300
+
+
+    Intial Commit
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (feature/addition)
+$ git checkout master
+Switched to branch 'master'
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git log
+commit 07cf34213096b7870acd5d0b391e6b0f36710592 (HEAD -> master, feature/soon-to-be-discarded)
+Author: Seif Elredeini <ojack7666@gmail.com>
+Date:   Tue Oct 24 13:55:12 2023 +0300
+
+
+    no message
+
+
+commit 0c58edb1cb3c30139a85a9a1cb4eb4260ccc5513
+Author: Seif Elredeini <ojack7666@gmail.com>
+Date:   Tue Oct 24 13:51:11 2023 +0300
+
+
+    Extra information about the project, a changelog file and our future Calculator class file
+
+
+commit 28afaf2eebf0f0631ff65911018ef0b3595cb669
+Author: Seif Elredeini <ojack7666@gmail.com>
+Date:   Tue Oct 24 13:44:38 2023 +0300
+
+
+    Added project title to the README
+
+
+commit d703daeee16d41701599fbf872f34fcbee01b831
+Author: Seif Elredeini <ojack7666@gmail.com>
+Date:   Tue Oct 24 13:39:26 2023 +0300
+
+
+    Intial Commit
+
+
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git merge feature/addition
+Updating 07cf342..d3acecf
+Fast-forward
+ .gitignore      | 1 +
+ Calculator.java | 3 +++
+ 2 files changed, 4 insertions(+)
+ create mode 100644 .gitignore
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git branch
+  feature/addition
+  feature/soon-to-be-discarded
+* master
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ nano Calculator.java
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git checkout feature/addition
+Switched to branch 'feature/addition'
+M       Calculator.java
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (feature/addition)
+$ echo "#2020-12-11" >> CHANGELOG.md
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (feature/addition)
+$ echo "* Added integer addition feature" >> CHANGELOG.md
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (feature/addition)
+$ git checkout master
+Switched to branch 'master'
+M       CHANGELOG.md
+M       Calculator.java
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git merge feature/addition
+Already up to date.
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   CHANGELOG.md
+        modified:   Calculator.java
+
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git add .
+warning: in the working copy of 'CHANGELOG.md', LF will be replaced by CRLF the next time Git touches it
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git commit -m "merging"
+[master c199d50] merging
+ 2 files changed, 8 insertions(+), 3 deletions(-)
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git merge feature/
+feature/addition               feature/soon-to-be-discarded
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$ git merge feature/addition
+Already up to date.
+
+
+Seif Elredeini@Seif MINGW64 ~/getting-started-with-git/calculator (master)
+$
